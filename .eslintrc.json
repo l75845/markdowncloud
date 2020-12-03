@@ -1,0 +1,59 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "jsx": true,
+        "useJSXTextNode": true,
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "tsconfigRootDir": "./",
+        "project": "./tsconfig.json",
+        "extraFileExtensions": [
+            ".ts",
+            ".tsx"
+        ]
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "import"
+    ],
+    "rules": {
+        "no-console": "off",
+        "class-methods-use-this": "off",
+        "no-restricted-syntax": "off",
+        "no-new": "off",
+        "global-require": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "no-underscore-dangle":"off",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "js": "never",
+              "jsx": "never",
+              "ts": "never",
+              "tsx": "never"
+            }
+         ]
+    }
+}
