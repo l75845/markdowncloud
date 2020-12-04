@@ -24,6 +24,7 @@
             "@interfaces/*": ["server/shared/*"],
             "@config/*": ["server/config/*"],
             "@middlewares/*": ["server/middlewares/*"],
+            "@db/*":["server/db/*"],
         }
     },
     "include": [

@@ -2,6 +2,7 @@ import React from 'react';
 import getClickState from '@recoil/selectors/clickNumSelector';
 import clickState from '@recoil/atoms/clickNumState';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { Button } from 'antd';
 import loginCSS from './index.module.css';
 
 const Login = () => {
@@ -15,7 +16,8 @@ const Login = () => {
   return (
     <div className={loginCSS.login}>
       <h1>login</h1>
-      <button onClick={clickHandler} type="button">click</button>
+      {/* <button onClick={clickHandler} type="button">click</button> */}
+      <Button type="primary" onClick={clickHandler}>click</Button>
       <span>{clickText}</span>
     </div>
   );

@@ -74,6 +74,12 @@ const webpackBaseConfig = {
         // loader: 'url-loader',
         type: 'asset',
       },
+      {
+        test: /\.m?js$/,
+        resolve: {
+          fullySpecified: false
+        }
+      },
     ],
   },
   experiments: {

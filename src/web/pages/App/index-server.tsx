@@ -1,9 +1,10 @@
 import React from 'react';
 import { Context } from '@interfaces/IKoa';
 import Routes, { firstRoutes } from 'web/routes/index-server';
-import { Link, StaticRouter, matchPath } from 'react-router-dom';
+import { StaticRouter, matchPath } from 'react-router-dom';
 import contentState from '@recoil/atoms/contentState';
 import { MutableSnapshot, RecoilRoot } from 'recoil';
+import 'antd/dist/antd.css';
 
 export default (ctx: Context) => {
   const routerPath = ctx.request.url;
@@ -18,7 +19,6 @@ export default (ctx: Context) => {
     });
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     Promise.all(promises).then((data: [{ data: unknown }]) => {
-      console.log(ctx.request.url, ' : ', data);
       // eslint-disable-next-line no-unused-vars
       let initializeState: (mutableSnapshot: MutableSnapshot) => void;
       if (routerPath === '/content' && data.length > 0) {
@@ -30,12 +30,6 @@ export default (ctx: Context) => {
       resolve(
         <RecoilRoot initializeState={initializeState}>
           <StaticRouter location={ctx.request.url}>
-            <h1>
-              <Link to="/login">login</Link>
-            </h1>
-            <h1>
-              <Link to="/content">content</Link>
-            </h1>
             {Routes()}
           </StaticRouter>
         </RecoilRoot>,
